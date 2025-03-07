@@ -4,7 +4,38 @@
 - Use the expose function to expose Angular component to Myop admin.
 - The first argument is the Angular component and second is the tag name.
 ```typescript
-    expose(TodoComponent,'myop-todo');
+   //// Option I 
+   expose(TodoComponent,'myop-todo');
+
+    //// Option II - Create Myop wrapper component to TodoComponent
+   import {Component, EnvironmentInjector, inject} from "@angular/core";
+   import {BaseMyopComponent, MyopContainerComponent} from "@nx-20-ng-19/shared";
+   import {TodoComponent} from "./dashboard.component";
+   
+   
+   @Component({
+      selector: 'myop-expose-todo',
+      standalone: true,
+      imports: [MyopContainerComponent],
+      template: `
+           <myop-container
+                   componentId = "ca8c0c4f-d26e-40c8-bf32-19eb104ee710"
+                   flowId      = "1d75e2f9-9a2d-49f1-aeeb-6268921a29fe"
+           />
+       `,
+   
+   })
+   export class MyopExposeTodoComponent extends BaseMyopComponent {
+      protected override injector = inject(EnvironmentInjector);
+      override componentType = TodoComponent;
+      override tagName = 'myop-todo';
+   
+      constructor() {
+         super();
+         this.exposeService.expose(TodoComponent,'myop-todo',this.injector);
+      }
+   
+   }
 ```
 
 ### Create Myop WebComponent from your Angular component
@@ -45,6 +76,10 @@ You can add Myop component in different way.
         },
         component:MyopContainerComponent,
     }
+   //// Option II 
+    {
+        path : 'todo', component: MyopExposeTodoComponent
+    }
 ```
 
 2. As component
@@ -58,6 +93,8 @@ You can add Myop component in different way.
       componentId="ca8c0c4f-d26e-40c8-bf32-19eb104ee710"
       flowId="1d75e2f9-9a2d-49f1-aeeb-6268921a29fe"
     />
+   //// Option II
+   <myop-expose-todo />
 ```
 
 ### Myop communication with Angular component
