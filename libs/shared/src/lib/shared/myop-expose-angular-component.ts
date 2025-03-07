@@ -83,7 +83,7 @@ export const expose = (component: Type<any>, tagName: string,appConfig?:Applicat
 
       class CustomMyopElement extends HTMLElement {
         //  root?: Root;
-        _props: any = {};
+        _props: { name?:string, [key:string]:any }  = {};
         _shadow: any;
 
         connectedCallback() {
@@ -100,8 +100,7 @@ export const expose = (component: Type<any>, tagName: string,appConfig?:Applicat
         }
 
         attributeChangedCallback(name: string, oldValue: any, newValue: any) {
-          // @ts-ignore
-          this._props[name] = newValue;
+          this._props.name = newValue;
           this.render();
         }
 
