@@ -1,0 +1,162 @@
+@if (hero) {
+  <div class="card">
+    <div class="card-header">
+      <div class="profile-img">
+        <img src="https://randomuser.me/api/portraits/lego/{{hero.id % 10}}.jpg" alt="{{hero.id}}">
+      </div>
+    </div>
+    <div class="card-body">
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
+     <!-- <div class="title">UX Designer</div>-->
+      <!--<p class="bio">Creative designer with 5 years of experience specializing in user interface design, user research, and creating intuitive experiences for web and mobile applications.</p>
+-->
+    </div>
+    <div class="card-footer">
+      <a (click)="goBack()" class="btn btn-primary">Go Back</a>
+      <a (click)="save()" class="btn btn-secondary">Save</a>
+    </div>
+  </div>
+
+
+
+}
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f5f7fa;
+    }
+
+    .card {
+        width: 350px;
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+        position: relative;
+        height: 120px;
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+    }
+
+    .profile-img {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 5px solid white;
+        background-color: #f0f0f0;
+        bottom: -60px;
+        left: 20px;
+        overflow: hidden;
+    }
+
+    .profile-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 80px 20px 20px;
+    }
+
+    .name {
+        font-size: 28px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .title {
+        font-size: 16px;
+        color: #6e8efb;
+        margin-bottom: 15px;
+    }
+
+    .bio {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    .stat-value {
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .stat-label {
+        font-size: 12px;
+        color: #999;
+        text-transform: uppercase;
+    }
+
+    .card-footer {
+        padding: 15px 20px;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #6e8efb;
+        color: white;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #5a7df9;
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+
+    .btn-secondary:hover {
+        background-color: #f5f5f5;
+    }
+</style>

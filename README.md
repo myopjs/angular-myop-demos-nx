@@ -1,2 +1,1 @@
-# myop-demos
-Show Myop in action
+# Myop Angular demos
