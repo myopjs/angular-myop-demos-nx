@@ -52,3 +52,20 @@ You can add Myop component in different way.
       flowId="1d75e2f9-9a2d-49f1-aeeb-6268921a29fe"
     />
 ```
+
+### Myop communication with Angular component
+- The MyopContainer component have event componentReady.
+- You can register to this event to communicate with the angular component.
+```typescript
+    ...
+    <myop-container
+        flowId      = "49283058-a787-4fa5-b0d2-516b2e6dc5e3"
+        componentId = "8c72d29b-c8a0-41cf-b08f-4acca96c7a16"
+        (componentReady)="onReady($event)"
+    />
+    ...
+    onReady(component:IMyopComponent){
+        component.send(ChangeTextMessage.create(component.refs.title, this.inputs.name));
+        component.show();
+    }
+```
