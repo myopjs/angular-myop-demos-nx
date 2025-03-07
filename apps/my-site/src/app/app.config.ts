@@ -5,8 +5,7 @@ import { routes } from './app.routes';
 import { importProvidersFrom } from '@angular/core';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
-import { expose, InMemoryDataService } from '@nx-20-ng-19/shared';
-import { DashboardComponent } from '@nx-20-ng-19/dashboard';
+import { InMemoryDataService } from '@nx-20-ng-19/shared';
 
 
 export const config = {
@@ -25,4 +24,4 @@ export const config = {
   ]
 };
 //// Myop
-expose(DashboardComponent,'myop-dashboard',config);
+//expose(DashboardComponent,'myop-dashboard',config);

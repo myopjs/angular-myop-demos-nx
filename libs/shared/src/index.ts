@@ -7,5 +7,4 @@ export * from './lib/shared/in-memory-data.service';
 export * from './lib/shared/mock-heroes';
 
 //// Myop SDK
-export * from './lib/shared/myop-container.component';
-export * from './lib/shared/myop-expose-angular-component';
+export * from './lib/shared/myop-utils';
