@@ -6,8 +6,13 @@
 
 
 ### Create Myop WebComponent from your Angular component
-1. Open Myop dashboard
-2. Insert to Component Editor screen, Click on "+ Add a Component" button.
+
+1. Open Myop dashboard<br>
+   <img src="docs/images/admin-dashboard.png" alt="Add Component Button" width="500"><br>
+
+2. Insert to Component Editor screen, Click on "+ Add a Component" button.<br>
+   <img src="docs/images/component-editor.png" alt="Add Component Button" width="500"><br>
+
 3. Now you in The Component Editor. Click on "+ Add" button.
 4. Change the loader to "WebComponent".
 5. Insert the url (http://localhost:4400).
