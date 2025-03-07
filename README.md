@@ -3,26 +3,28 @@
 ### Expose Angular components
 - Use the expose function to expose Angular component to Myop admin.
 - The first argument is the Angular component and second is the tag name.
-
+```typescript
+    expose(TodoComponent,'myop-todo');
+```
 
 ### Create Myop WebComponent from your Angular component
 
-1. Open Myop dashboard<br>
+1. Open Myop dashboard (https://dashboard.myop.dev/)<br>
    <img src="docs/images/admin-dashboard.png" alt="Add Component Button" width="500"><br>
 
-2. Insert to Component Editor screen, Click on "+ Add a Component" button.<br>
+2. Insert to Component Editor screen, Click on **"+ Add a Component"** button.<br>
    <img src="docs/images/component-editor.png" alt="Add Component Button" width="500"><br>
 
-3. Now you in The Component Editor. Click on "+ Add" button.
+3. Now you in The Component Editor. Click on **"+ Add"** button.
 4. Change the loader to "WebComponent".
-5. Insert the url (http://localhost:4400).
-6. Insert the tag name that you expose the component.
+5. Insert the **url** (http://localhost:4400).
+6. Insert the **tag name** that you expose the component.
 7. Now you can see the angular component in the admin panel.
 8. The guid in the browser url is the componentId.
  
 ### Create Flow
-1. Open Myop dashboard
-2. Insert to Flows Editor screen, Click "+ Add a Flow" button.
+1. Open Myop dashboard (https://dashboard.myop.dev/)<br>
+2. Insert to Flows Editor screen, Click **"+ Add a Flow"** button.
 3. Add the component.
 4. The guid in the browser url is the flowId.
 
