@@ -1,7 +1,7 @@
-import { Component, EnvironmentInjector, inject } from '@angular/core';
-import { MyopContainerComponent } from '@nx-20-ng-19/shared';
+import { Component } from '@angular/core';
 import { IMyopComponent } from '@myop/sdk/host';
 import { ChangeTextMessage } from '@myop/sdk/messages';
+import { MyopContainerComponent } from '@nx-20-ng-19/myop';
 import {MyopExposeDashboardComponent} from "./myop-expose-dashboard.component";
 
 

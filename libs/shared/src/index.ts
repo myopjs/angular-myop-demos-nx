@@ -6,5 +6,4 @@ export * from './lib/shared/message.service';
 export * from './lib/shared/in-memory-data.service';
 export * from './lib/shared/mock-heroes';
 
-//// Myop SDK
-export * from './lib/shared/myop-utils';
+

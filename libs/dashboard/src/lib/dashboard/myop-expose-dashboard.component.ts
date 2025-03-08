@@ -1,5 +1,5 @@
 import {Component, EnvironmentInjector, inject} from "@angular/core";
-import {BaseMyopComponent, MyopContainerComponent} from "@nx-20-ng-19/shared";
+import {BaseMyopComponent, MyopContainerComponent} from "@nx-20-ng-19/myop";
 import {DashboardComponent} from "./dashboard.component";
 
 
