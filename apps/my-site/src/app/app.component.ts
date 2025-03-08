@@ -19,7 +19,6 @@ import { MessagesComponent } from '@nx-20-ng-19/shared';
       text-decoration: none;
       margin-top: 10px;
       display: inline-block;
-      background-color: #e8e8e8;
       color: #3d3d3d;
       border-radius: 4px;
     }
