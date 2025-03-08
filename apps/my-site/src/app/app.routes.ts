@@ -3,10 +3,27 @@ import { MyopContainerComponent } from '@nx-20-ng-19/myop';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard' , loadComponent: ()=> import('@nx-20-ng-19/dashboard').then( m=>m.DashboardComponent) },
+  { path: 'detail/:id', loadComponent: ()=> import('./hero-detail/hero-detail.component').then( m=>m.HeroDetailComponent) },
+  { path: 'heroes'    , loadComponent: ()=> import('./heroes/heroes.component').then(m=>m.HeroesComponent) },
 
-  //// Myop routes
+  //////////////////
+  //// Myop Demos
+  //////////////////
+
+  //// Myop Demo - html
   {
-    path: 'myop-dashboard2' ,
+    path: 'myop-html' ,
+    loadComponent: ()=> import('@nx-20-ng-19/dashboard').then( m=>m.MyopHtmlDemoComponent)
+  },
+  //// Myop Demo - Use Myop container component to display Dashboard component.
+  {
+    path: 'myop-container-cmp' ,
+    loadComponent: ()=> import('@nx-20-ng-19/dashboard').then( m=>m.MyopContainerCmpDemoComponent)
+  },
+  //// Myop Demo - Use Myop container component directly with data object.
+  {
+    path: 'myop-route' ,
     providers:[],
     data : {
       componentId:"ca8c0c4f-d26e-40c8-bf32-19eb104ee710",
@@ -14,12 +31,10 @@ export const routes: Routes = [
     },
     component:MyopContainerComponent,
   },
+  //// Myop Demo - Use Myop wrapper component to display Dashboard component.
   {
     path: 'myop-dashboard' ,
     loadComponent: ()=> import('@nx-20-ng-19/dashboard').then( m=>m.MyopDashboardComponent)
   },
 
-  { path: 'dashboard' , loadComponent: ()=> import('@nx-20-ng-19/dashboard').then( m=>m.DashboardComponent) },
-  { path: 'detail/:id', loadComponent: ()=> import('./hero-detail/hero-detail.component').then( m=>m.HeroDetailComponent) },
-  { path: 'heroes'    , loadComponent: ()=> import('./heroes/heroes.component').then(m=>m.HeroesComponent) }
 ];

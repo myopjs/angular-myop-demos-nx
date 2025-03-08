@@ -2,7 +2,7 @@ import {Component, effect, ElementRef, inject, input, linkedSignal, output, view
 import {IMyopComponent} from '@myop/sdk/host';
 import {ActivatedRoute} from '@angular/router';
 import {toSignal} from '@angular/core/rxjs-interop';
-import {MyopAngularService} from "../services/myop-angular.service";
+import {MyopComponentLoaderService} from "../services/myop-component-loader.service";
 
 
 @Component({
@@ -22,7 +22,7 @@ import {MyopAngularService} from "../services/myop-angular.service";
 })
 export class MyopContainerComponent {
   protected route = inject(ActivatedRoute);
-  protected myopAngularService = inject(MyopAngularService);
+  protected myopComponentLoaderService = inject(MyopComponentLoaderService);
   routeData = toSignal<{flowId:string,componentId:string}>(this.route.data as any);
 
 
@@ -43,9 +43,10 @@ export class MyopContainerComponent {
 
   constructor() {
     effect( async () => {
-      if(this.myopContainer()?.nativeElement && this.flowId() && this.componentId()) {
-        // @ts-ignore
-        await this.myopAngularService.load(this.flowId(), this.componentId(), this.myopContainer().nativeElement);
+      if(this.flowId() && this.componentId()) {
+        if(this.myopContainer()?.nativeElement){
+          await this.myopComponentLoaderService.load(this.flowId(), this.componentId(), this.myopContainer()?.nativeElement as any);
+        }
       }
     });
   }

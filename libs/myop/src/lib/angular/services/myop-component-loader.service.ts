@@ -6,7 +6,7 @@ import {HostSDK} from "@myop/sdk/dist/module/host/hostSDK";
 * Load Myop Angular component from Myop Admin.
 * */
 @Injectable({providedIn: 'root'})
-export class MyopAngularService {
+export class MyopComponentLoaderService {
     loading?: Promise<void>;
     isLoaded = false;
     userFlows: Record<string, Promise<IUserFlow>> = {};

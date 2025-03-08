@@ -6,7 +6,7 @@ import {createCustomElement} from "@angular/elements";
 * Expose Angular component to Myop admin.
 * */
 @Injectable({providedIn: 'root'})
-export class MyopExposeService {
+export class MyopComponentExposeService {
 
     expose(component: Type<any>, tagName: string, injector: Injector) {
 
