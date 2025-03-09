@@ -3,3 +3,5 @@ export * from './components/base-myop.component';
 
 export * from './services/myop-component-expose.service';
 export * from './services/myop-component-loader.service';
+
+export * from './exposeAngularComponent'
