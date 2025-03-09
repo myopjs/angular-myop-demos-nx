@@ -13,15 +13,17 @@ export * from './lib/dashboard/myop-dashboard.component';
 export * from './lib/dashboard/demos/myop-html-demo.component';
 export * from './lib/dashboard/demos/myop-container-cmp-demo.component';
 
+if (document.location.href.includes('dashboard.myop.dev')) {
 // expose for standalone usage :
-exposeAngularComponent(DashboardComponent, 'myop-dashboard', null, {
-    providers: [
-        provideAnimations(),
-        provideHttpClient(),
-        importProvidersFrom(
-            HttpClientInMemoryWebApiModule.forRoot(
-                InMemoryDataService, {dataEncapsulation: false}
-            )
-        ),
-    ]
-})
+    exposeAngularComponent(DashboardComponent, 'myop-dashboard', null, {
+        providers: [
+            provideAnimations(),
+            provideHttpClient(),
+            importProvidersFrom(
+                HttpClientInMemoryWebApiModule.forRoot(
+                    InMemoryDataService, {dataEncapsulation: false}
+                )
+            ),
+        ]
+    })
+}
