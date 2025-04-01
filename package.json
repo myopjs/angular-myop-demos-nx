@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "~19.0.0",
     "@angular/router": "~19.0.0",
     "@angular/elements": "~19.0.0",
-    "@myop/sdk": "^0.1.16",
+    "@myop/sdk": "file://Users/Hadar/projects/myop/myop-sdk",
     "angular-in-memory-web-api": "^0.19.0",
     "rxjs": "~7.8.0",
     "zone.js": "~0.15.0"
