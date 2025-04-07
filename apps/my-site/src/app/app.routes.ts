@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { MyopContainerComponent } from '@nx-20-ng-19/myop';
+import { MyopContainerComponent } from '@myop/angular';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
