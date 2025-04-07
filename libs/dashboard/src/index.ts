@@ -1,5 +1,5 @@
 //import {DashboardComponent} from "./lib/dashboard/dashboard.component";
-import {exposeAngularComponent} from "@nx-20-ng-19/myop";
+import {exposeAngularComponent} from "@myop/angular-remote";
 import {Dashboard1Component} from "./lib/dashboard/dashboard1.component";
 import {DashboardComponent} from "./lib/dashboard/dashboard.component";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
@@ -55,7 +55,11 @@ const createStandaloneOptions = async () => {
 //exposeAngularComponent(DashboardComponent, 'myop-dashboard').then();
 
 debugger;
-exposeAngularComponent(DashboardComponent, 'myop-dashboard-complex', createStandaloneOptions).then();
-exposeAngularComponent(DashboardComponent, 'myop-dashboard', createStandaloneOptions).then();
+//exposeAngularComponent(DashboardComponent, 'myop-dashboard-complex', createStandaloneOptions).then();
+//exposeAngularComponent(Dashboard1Component, 'myop-dashboard', createStandaloneOptions).then();
+exposeAngularComponent(Dashboard1Component, 'myop-dashboard').then();
 
 //export * from "./lib/dashboard/dashboard.component";
+
+
+//exposeReactComponent(()=>{reutrn <div>} , 'my-react-comp1', {}, {showMode :closed, open , none})

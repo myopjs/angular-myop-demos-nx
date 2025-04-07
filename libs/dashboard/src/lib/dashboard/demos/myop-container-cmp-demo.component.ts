@@ -1,4 +1,4 @@
-import {MyopContainerComponent} from "@nx-20-ng-19/myop";
+import {MyopContainerComponent} from "@myop/angular";
 import {Component} from "@angular/core";
 
 @Component({

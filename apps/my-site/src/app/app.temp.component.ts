@@ -1,14 +1,19 @@
-import {Component} from '@angular/core';
-import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-import {MessagesComponent} from '@nx-20-ng-19/shared';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, SchemaMetadata, Type} from '@angular/core';
+import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
+import {MyopContainerComponent} from "@myop/angular"
 
 @Component({
-    selector: 'app-root',
+    standalone: true,
     imports: [
         RouterLink,
         RouterOutlet,
-        RouterLinkActive
+        RouterLinkActive,
+        MyopContainerComponent
     ],
+    selector: 'app-root-temp',
+    // schemas : [
+    //   //  CUSTOM_ELEMENTS_SCHEMA
+    // ],
     styles: [`
         /* AppComponent's private CSS styles */
         h1 {
@@ -66,6 +71,9 @@ import {MessagesComponent} from '@nx-20-ng-19/shared';
     `],
     template: `
         <h1>{{ title }}</h1>
+
+        <div>my web site testser</div>
+
         <nav>
             <a routerLink="/dashboard" routerLinkActive="linkActive">Dashboard</a>
             <a routerLink="/heroes" routerLinkActive="linkActive">Heroes</a>
@@ -81,11 +89,19 @@ import {MessagesComponent} from '@nx-20-ng-19/shared';
                 myop-container-cmp
             </a>
             <a routerLink="myop-html" routerLinkActive="linkActive">myop html demo</a>
+
+            <myop-container
+                    flowId="49283058-a787-4fa5-b0d2-516b2e6dc5e3"
+                    componentId="8c72d29b-c8a0-41cf-b08f-4acca96c7a16"
+            />
+
+            <router-outlet></router-outlet>
+
+            <!--<myop-container/>-->
         </nav>
-        <router-outlet></router-outlet>
         <!-- <app-messages />-->
     `,
 })
-export class AppComponent {
+export class AppComponentTemp {
     title = 'Tour of Heroes';
 }

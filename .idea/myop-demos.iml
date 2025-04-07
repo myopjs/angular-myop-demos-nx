@@ -9,5 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="angular-starter" />
+    <orderEntry type="module" module-name="angular-start-remote" />
   </component>
 </module>

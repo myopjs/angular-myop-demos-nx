@@ -1,12 +1,13 @@
 import {Component, inject, OnInit, ViewEncapsulation} from '@angular/core';
 //import {RouterLink} from '@angular/router';
 //import {Hero, HeroSearchComponent, HeroService} from '@nx-20-ng-19/shared';
+import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'component-1',
+    selector: 'lib-component-test-1',
     standalone: true,
+    imports: [CommonModule],
     encapsulation: ViewEncapsulation.ShadowDom,
-    imports: [],
     template: `
         <!-- Hero Image Section -->
         <div class="hero-header" style="color:red">
@@ -14,7 +15,7 @@ import {Component, inject, OnInit, ViewEncapsulation} from '@angular/core';
         </div>
 
         <div>
-            hey hey hey
+            hey hey hey new ver
         </div>
         
         <style>
@@ -76,14 +77,14 @@ import {Component, inject, OnInit, ViewEncapsulation} from '@angular/core';
 
     `
 })
-export class Dashboard1Component implements OnInit {
+export class Dashboard1Component  {
     // private heroService = inject(HeroService);
     //
     // heroes: Hero[] = [];
     //
-    ngOnInit(): void {
-      //  alert('?')
-    }
+    // ngOnInit(): void {
+    //   //  alert('?')
+    // }
 
     //
     // getHeroes(): void {

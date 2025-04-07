@@ -18,7 +18,7 @@
       "@eyal/lib1": ["lib1/src/index.ts"],
       "@nx-20-ng-19/dashboard": ["libs/dashboard/src/index.ts"],
       "@nx-20-ng-19/myop": ["libs/myop/src/index.ts"],
-      "@nx-20-ng-19/shared": ["libs/shared/src/index.ts"]
+      "@nx-20-ng-19/shared": ["libs/shared/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]
