@@ -3,7 +3,7 @@ import {DashboardComponent} from './lib/dashboard/dashboard.component';
 import {provideAnimations} from "@angular/platform-browser/animations";
 import {provideHttpClient} from "@angular/common/http";
 import {provideRouter} from "@angular/router";
-import {routes} from "../../../apps/my-site/src/app/app.routes";
+//import {routes} from "../../../apps/my-site/src/app/app.routes";
 import {importProvidersFrom} from "@angular/core";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "@nx-20-ng-19/shared";
@@ -12,7 +12,7 @@ export const config = {
     providers: [
         provideAnimations(),
         provideHttpClient(),
-        provideRouter(routes),
+        provideRouter([]),
         importProvidersFrom(
             // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
             // and returns simulated server responses.
